@@ -1,0 +1,18 @@
+@use "../../abstracts" as *;
+.topbar {
+  max-height: 40px;
+  background-color: $primaryColor;
+  p {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    padding-block: 4px;
+    text-align: center;
+  }
+  @include maxWidth($small) {
+    p {
+      text-wrap: wrap;
+      line-height: 1.5;
+    }
+  }
+}
