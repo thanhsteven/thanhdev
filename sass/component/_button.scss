@@ -1,0 +1,15 @@
+// * Button basic
+@mixin linkButton() {
+  display: flex;
+  color: #fff;
+  background-color: transparent;
+  text-wrap: nowrap;
+  border: unset;
+  padding-block: 15px;
+  border-bottom: 2px solid;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  &:hover {
+    border-color: #fff;
+  }
+}

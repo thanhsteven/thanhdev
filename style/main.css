@@ -1,11 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
-  overflow-x: hidden;
   scroll-margin-top: 50px;
+  overflow-x: hidden;
 }
 
 .container {
@@ -23,11 +23,6 @@ body {
 .container-fluid {
   width: 100%;
   padding-inline: 15px;
-}
-
-section {
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 
 *,
@@ -82,10 +77,18 @@ b {
 
 body {
   font-family: "Inter", sans-serif;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  word-wrap: break-word;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.6;
+  text-align: left;
+}
+@media screen and (max-width: 576px) {
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

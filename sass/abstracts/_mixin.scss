@@ -1,3 +1,4 @@
+// * Mixin Flexbox
 @mixin flexbox($direction: row, $align: center, $justify: center, $gap: 0) {
   & {
     display: flex;
@@ -24,66 +25,23 @@
   }
 }
 
-// * Placeholder for Input
-@mixin placeholder($color) {
-  font-size: 14px;
-  &::-webkit-input-placeholder {
-    color: $color;
-  }
-  &::-moz-input-placeholder {
-    color: $color;
-  }
-}
-// * Button basic
-@mixin linkButton() {
-  display: flex;
-  color: #fff;
-  background-color: transparent;
-  text-wrap: nowrap;
-  border: unset;
-  padding-block: 15px;
-  border-bottom: 2px solid;
-  border-bottom-color: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  &:hover {
-    border-color: #fff;
-  }
-}
-
-// * Box square
-@mixin square($width) {
+// * Khối hình vuông
+@mixin squareBox($width) {
   & {
     width: $width;
     height: $width;
     line-height: $width;
   }
 }
-@mixin size($width: 0, $height: 0) {
+// * Khối Custome
+@mixin shapeBox($width: 0, $height: 0) {
   & {
     width: $width;
     height: $height;
   }
 }
 
-// * Under Line Menu Item
-@mixin underline($color, $transition) {
-  content: "";
-  display: block;
-  height: 1px;
-  width: 0;
-  background-color: $color;
-  transition: $transition;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: translateY(-13px);
-}
-// When hover
-@mixin hoverUnderline($width) {
-  width: $width;
-}
-
-// * Responsive
+// * Responsive CSS
 @mixin minWidth($breakpoint: 0) {
   @media screen and (min-width: $breakpoint) {
     @content;
@@ -100,18 +58,7 @@
   }
 }
 
-@mixin virtualBridge($height) {
-  content: "";
-  display: block;
-  width: 100%;
-  height: $height;
-  background-color: transparent;
-  position: absolute;
-  bottom: 100%;
-  z-index: 120;
-}
-
-// * Hiện tiêu đề chỉ 2 dòng
+// * Hiện 2 dòng Text
 @mixin webkitBox($row) {
   display: -webkit-box;
   -webkit-box-orient: vertical;

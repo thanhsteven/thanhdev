@@ -1,26 +1,21 @@
 @use "../abstracts" as *;
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 body {
-  overflow-x: hidden;
   scroll-margin-top: 50px;
+  overflow-x: hidden;
 }
 .container {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
   max-width: $container;
-  @include maxWidth(1200px) {
+  @include maxWidth($extra-large) {
     padding-inline: 15px;
   }
 }
 .container-fluid {
   width: 100%;
   padding-inline: 15px;
-}
-section {
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
