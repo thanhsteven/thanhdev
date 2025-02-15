@@ -1,38 +1,39 @@
 @use "./abstracts" as *;
+$borderMenu: #ddd;
+$heightMenuItem: 50px;
+
 // * Menu Basic
 .menu {
-  &-nav {
-    background-color: $primaryColor;
-    @include maxWidth($large) {
-      background-color: #fff;
-      overflow-y: auto;
-      width: 40vw;
-      height: 100vh;
-      position: fixed;
-      left: -100%;
-      top: 0;
-      z-index: 999;
-      box-shadow: $shadow2;
-      transition: all ease-in-out 0.5s;
-      &-show {
-        left: 0;
-        overflow: hidden;
-      }
+  background-color: $primaryColor;
+  @include maxWidth($large) {
+    background-color: #fff;
+    overflow-y: auto;
+    width: 40vw;
+    height: 100vh;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    z-index: 999;
+    box-shadow: $shadow2;
+    transition: all ease-in-out 0.5s;
+    &-show {
+      left: 0;
+      overflow: hidden;
     }
-    @include maxWidth($medium) {
-      width: 50vw;
-    }
-    @include maxWidth($small) {
-      width: 70vw;
-      min-width: fit-content;
-    }
+  }
+  @include maxWidth($medium) {
+    width: 50vw;
+  }
+  @include maxWidth($small) {
+    width: 70vw;
+    min-width: fit-content;
   }
   &-close {
     border: none;
-    width: 30px;
-    height: 30px;
-    margin-left: 86%;
-    margin-top: 10px;
+    width: 45px;
+    height: 45px;
+    margin-left: 80%;
+    margin-block: 20px;
     background-color: #eee;
     border-radius: $border4;
     box-shadow: $shadow2;
@@ -42,6 +43,7 @@
     }
   }
 }
+
 // - Main menu
 .menu {
   &-list {
@@ -61,10 +63,6 @@
   &-item {
     position: relative;
     cursor: pointer;
-    @include maxWidth($large) {
-      width: 100%;
-      cursor: pointer;
-    }
     &:first-child {
       @include maxWidth($large) {
         .menu-item-wrapper {
@@ -72,56 +70,60 @@
         }
       }
     }
-    &-wrapper {
-      @include flexbox(row, center, space-between, null);
-      @include maxWidth($large) {
-        align-items: unset;
-        border-top: 1px solid $borderColor;
-        padding-left: 15px;
-      }
+    @include maxWidth($large) {
+      width: 100%;
+      cursor: pointer;
     }
-    &-link {
-      flex: 0 0 auto;
-      padding: 10px;
-      display: inline-block;
-      @include maxWidth($large) {
-        display: block;
-        padding-block: unset;
-        line-height: 40px;
-      }
+  }
+  &-icon {
+    flex: 1 1 auto;
+    display: block;
+    min-height: 100%;
+    @include maxWidth($large) {
+      margin-right: 1px;
+      line-height: $heightMenuItem;
+      max-width: 50px;
+      background-color: #fff;
+      text-align: center;
+      border-left: 1px solid $borderMenu;
+      pointer-events: none;
+      transition: all linear 0.3s;
     }
-    &-text {
-      color: #fff;
-      font-weight: 700;
-      line-height: 22px;
-      font-size: 16px;
-      @include maxWidth($large) {
-        color: $primaryColor;
-      }
+  }
+  &-arrow {
+    color: #fff;
+    transition: $transition;
+    @include maxWidth($large) {
+      pointer-events: none;
+      color: $primaryColor;
+      transform: rotate(-90deg);
     }
-    &-icon {
-      flex: 1 1 auto;
+  }
+  &-link {
+    flex: 0 0 auto;
+    padding: 10px;
+    display: inline-block;
+    @include maxWidth($large) {
       display: block;
-      min-height: 100%;
-      @include maxWidth($large) {
-        margin-right: 1px;
-        line-height: 40px;
-        max-width: 50px;
-        background-color: #fff;
-        text-align: center;
-        border-left: 1px solid $borderColor;
-        pointer-events: none;
-        transition: all linear 0.3s;
-      }
+      padding-block: unset;
+      line-height: $heightMenuItem;
     }
-    &-arrow {
-      color: #fff;
-      transition: $transition;
-      @include maxWidth($large) {
-        pointer-events: none;
-        color: $primaryColor;
-        transform: rotate(-90deg);
-      }
+  }
+  &-text {
+    color: #fff;
+    font-weight: 700;
+    line-height: 22px;
+    font-size: 16px;
+    @include maxWidth($large) {
+      color: $primaryColor;
+    }
+  }
+  &-wrapper {
+    @include flexbox(row, center, space-between, null);
+    @include maxWidth($large) {
+      align-items: unset;
+      border-top: 1px solid $borderMenu;
+      padding-left: 15px;
     }
   }
 }
@@ -129,7 +131,7 @@
 // - Hover
 .menu-item {
   &:hover {
-    .menu-item {
+    .menu {
       &-arrow {
         transform: rotateX(180deg);
         @include maxWidth($large) {
@@ -148,7 +150,7 @@
 .icon-show {
   background-color: $primaryColor;
   color: #fff;
-  .menu-item-arrow {
+  .menu-arrow {
     transform: unset !important;
     color: inherit;
   }
@@ -181,44 +183,20 @@
     max-width: unset;
     border-radius: unset;
     box-shadow: unset;
+    border-top: 1px solid $borderMenu;
     max-height: 0px;
   }
   &-item {
     background-color: #fff;
     transition: all linear 0.3s;
+    border-top: 1px solid $borderMenu;
     @include maxWidth($large) {
       padding-left: 20px;
-      border-bottom: 1px solid $borderColor;
+      border-bottom: 1px solid $borderMenu;
     }
-    &:first-child {
-      border-top: 1px solid $borderColor;
-    }
+    &:first-child,
     &:last-child {
-      border-bottom: unset;
-    }
-    &-link {
-      & {
-        padding: 10px 16px;
-      }
-      @include flexbox(row, center, flex-start, 8px);
-      @include maxWidth($large) {
-        padding-right: 15px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        font-weight: 600;
-      }
-    }
-    &-image {
-      max-width: 30px;
-      border-radius: $border4;
-      object-fit: cover;
-      height: 100%;
-    }
-    &-text {
-      color: $primaryColor;
-      font-size: 14px;
-      text-wrap: nowrap;
-      font-weight: 600;
+      border-top: unset;
     }
     &:hover {
       background-color: #ddd;
@@ -227,18 +205,28 @@
       }
     }
   }
-}
-
-// * Hover menu item
-@mixin hoverUnderline($color, $transition) {
-  content: "";
-  display: block;
-  height: 1px;
-  width: 0;
-  background-color: $color;
-  transition: $transition;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: translateY(-13px);
+  &-link {
+    & {
+      padding: 10px 16px;
+    }
+    @include flexbox(row, center, flex-start, 8px);
+    @include maxWidth($large) {
+      padding-right: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-weight: 600;
+    }
+  }
+  &-image {
+    max-width: 30px;
+    border-radius: $border4;
+    object-fit: cover;
+    height: 100%;
+  }
+  &-text {
+    color: $primaryColor;
+    font-size: 14px;
+    text-wrap: nowrap;
+    font-weight: 600;
+  }
 }

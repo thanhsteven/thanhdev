@@ -4,115 +4,122 @@
       href: "#",
       follow: "dofollow",
       text: "iSOGLASS",
-      child: false,
-      active: true
+      active: true,
+      child: false
     },
     {
       href: "#",
       follow: "dofollow",
       text: "Chai thuỷ tinh",
+      active: true,
       child: [
         {
-          icon02: "./",
-          text02: "Chai thuỷ tinh đựng rượu",
-          href02: "#",
+          subicon: "../element/menu-basic/images/menu-icon-1.jpg",
+          subtext: "Chai thuỷ tinh đựng rượu",
+          sublink: "#",
         },
         {
-          icon02: "./",
-          text02: "Chai thuỷ tinh đựng nước",
-          href02: "#",
+          subicon: "../element/menu-basic/images/menu-icon-1.jpg",
+          subtext: "Chai thuỷ tinh đựng nước",
+          sublink: "#",
         },
         {
-          icon02: "./",
-          text02: "Bộ bình ly thuỷ tinh",
-          href02: "#",
+          subicon: "../element/menu-basic/images/menu-icon-1.jpg",
+          subtext: "Bộ bình ly thuỷ tinh",
+          sublink: "#",
         },
         {
-          icon02: "./",
-          text02: "Chai gốm đựng rượu",
-          href02: "#",
+          subicon: "../element/menu-basic/images/menu-icon-1.jpg",
+          subtext: "Chai gốm đựng rượu",
+          sublink: "#",
         }
       ],
-      active: true 
     },
     {
       href: "#",
       follow: "dofollow",
       text: "Ly thuỷ tinh",
+      active: false,
       child: [
         {
-          icon02: "./",
-          text02: "Bộ ly thuỷ tinh"
+          subicon: "../element/menu-basic/images/menu-icon-1.jpg",
+          subtext: "Bộ ly thuỷ tinh",
+          sublink: "#"
         },
         {
-          icon02: "./",
-          text02: "Ly thuỷ tinh 2 lớp"
+          subicon: "../element/menu-basic/images/menu-icon-1.jpg",
+          subtext: "Ly thuỷ tinh 2 lớp",
+          sublink: "#"
         },
         {
-          icon02: "./",
-          text02: "Ly thuỷ tinh uống rượu"
+          subicon: "../element/menu-basic/images/menu-icon-1.jpg",
+          subtext: "Ly thuỷ tinh uống rượu",
+          sublink: "#"
         },
         {
-          icon02: "./",
-          text02: "Ly thuỷ tinh cao cấp"
+          subicon: "../element/menu-basic/images/menu-icon-1.jpg",
+          subtext: "Ly thuỷ tinh cao cấp",
+          sublink: "#"
         },
         {
-          icon02: "./",
-          text02: "Ly thuỷ tinh uống bia"
+          subicon: "../element/menu-basic/images/menu-icon-1.jpg",
+          subtext: "Ly thuỷ tinh uống bia",
+          sublink: "#"
         },
         {
-          icon02: "./",
-          text02: "Ly thuỷ tinh uống cafe"
+          subicon: "../element/menu-basic/images/menu-icon-1.jpg",
+          subtext: "Ly thuỷ tinh uống cafe",
+          sublink: "#"
         },
       ],
-      active: false
     },
     {
       href: "#",
       follow: "dofollow",
       text: "Bình thuỷ tinh",
-      child: false,
-      active: false
+      active: false,
+      child: false
     },
     {
       href: "#",
       follow: "dofollow",
-      text: "In thương hiệu ly thủy tinh",
-      child: false,
-      active: false
+      text: "In logo",
+      active: false,
+      child: false
     },
     {
       href: "#",
       follow: "nofollow",
       text: "Giới thiệu",
-      child: false,
-      active: false
+      active: false,
+      child: false
     },
     {
       href: "#",
       follow: "nofollow",
       text: "Liên hệ",
-      child: false,
-      active: false
+      active: false,
+      child: false
     }
   ];
 
-nav.menu-nav 
+nav.menu
   button.menu-close
     i.fa.fa-close(aria-hidden="true")
   ul.menu-list
     each item in menu
       li.menu-item(data-toggle=item.child ? "sub-menu" : false) 
-        .menu-item-wrapper
-          a.menu-item-link(href=item.href rel=`noopener noreferrer ${item.follow}`)
-            span.menu-item-text=item.text 
+        .menu-wrapper
+          a.menu-link(href=item.href rel=`noopener noreferrer ${item.follow}`)
+            span.menu-text=item.text 
           if item.child 
-            span.menu-item-icon 
-              i.fa.fa-angle-down.menu-item-arrow(aria-hidden="true") 
+            span.menu-icon 
+              i.fa.fa-angle-down.menu-arrow(aria-hidden="true") 
         if item.child 
           ul.sub-menu 
             each child in item.child
               li.sub-menu-item
-                a.sub-menu-item-link(href=child.href02 rel="noopener noreferrer")
-                  img.sub-menu-item-image(src=child.icon02, alt=child.text02, srcset=`${child.icon02} 2x`)
-                  span.sub-menu-item-text=child.text02
+                a.sub-menu-link(href=child.sublink rel="noopener noreferrer")
+                  img.sub-menu-image(src=child.subicon, alt=child.subtext, srcset=`${child.subicon} 2x`)
+                  span.sub-menu-text=child.subtext 
+script(src="../../element/menu-basic/menu-basic.js")
