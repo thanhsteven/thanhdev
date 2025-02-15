@@ -195,11 +195,11 @@
           line-height: 1.5;
           margin-block: 6px;
           span {
-            font-weight: 600;
-            color: inherit;
+            font-weight: normal;
             font-size: inherit;
             line-height: inherit;
             text-wrap: wrap;
+            letter-spacing: 0.3px;
           }
           i.fa {
             margin-right: 10px;
