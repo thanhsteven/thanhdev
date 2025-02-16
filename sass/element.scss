@@ -188,7 +188,7 @@ $heightMenuItem: 50px;
   }
   &-item {
     background-color: #fff;
-    transition: all linear 0.3s;
+    transition: all linear 0.2s;
     border-top: 1px solid $borderMenu;
     @include maxWidth($large) {
       padding-left: 20px;
@@ -199,7 +199,10 @@ $heightMenuItem: 50px;
       border-top: unset;
     }
     &:hover {
-      background-color: #ddd;
+      background-color: rgba(221, 221, 221, 0.9);
+      span {
+        color: $primaryColor;
+      }
       @include maxWidth($large) {
         background-color: unset;
       }
@@ -224,9 +227,9 @@ $heightMenuItem: 50px;
     height: 100%;
   }
   &-text {
-    color: $primaryColor;
+    color: $beforeHover;
+    font-weight: 400;
     font-size: 14px;
     text-wrap: nowrap;
-    font-weight: 600;
   }
 }

@@ -219,7 +219,7 @@
 }
 .sub-menu-item {
   background-color: #fff;
-  transition: all linear 0.3s;
+  transition: all linear 0.2s;
   border-top: 1px solid #ddd;
 }
 @media screen and (max-width: 992px) {
@@ -232,7 +232,10 @@
   border-top: unset;
 }
 .sub-menu-item:hover {
-  background-color: #ddd;
+  background-color: rgba(221, 221, 221, 0.9);
+}
+.sub-menu-item:hover span {
+  color: #1a2c75;
 }
 @media screen and (max-width: 992px) {
   .sub-menu-item:hover {
@@ -272,10 +275,10 @@
   height: 100%;
 }
 .sub-menu-text {
-  color: #1a2c75;
+  color: #848484;
+  font-weight: 400;
   font-size: 14px;
   text-wrap: nowrap;
-  font-weight: 600;
 }
 
 /*# sourceMappingURL=element.css.map */
