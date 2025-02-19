@@ -14,9 +14,12 @@ html(lang="vi")
     include ./header/header.pug
     block menu 
     block main 
+      .container(style="min-height: 500px")
     //- Footer
     include ./footer/prefooter.pug
     include ./footer/footer.pug
     include ./footer/copyright.pug
     //- Plugin
-    script(src="../js/main.js") 
+    block plugin 
+    //- Script
+    script(src="../js/main.js")
