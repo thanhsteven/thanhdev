@@ -1,0 +1,21 @@
+- 
+  var noti = [
+    {
+      image: "../element/notification/images/khach-hang-1.jpg",
+      name: "Hoàng Nguyên",
+      title: "Đã mua hàng và shop giao hàng rất tốt",
+      time: "7 phút trước"
+    }
+  ]
+
+
+.noti
+  each customer in noti 
+    .noti-avatar 
+      img(src=customer.image, alt="khách hàng")
+    .noti-content 
+      p.noti-title=customer.name  
+      p.noti-paragraph=customer.title 
+      span.noti-time=customer.time 
+append plugin 
+  script(src="../../element/notification/noti.js")
