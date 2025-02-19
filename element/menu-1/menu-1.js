@@ -1,6 +1,18 @@
 console.log("Đã kết nối với menu.js");
 (function () {
+  // * Khai báo biến tổng
+  const menuModal = document.querySelector(".menu-modal");
+  const btnOpenMenu = document.querySelector(".header-menu");
   const navMenu = document.querySelector(".menu");
+  const btnCloseMenu = document.querySelector(".menu-close");
+  const subMenus = navMenu.querySelectorAll(".sub-menu");
+  const menuIcons = navMenu.querySelectorAll(".menu-icon");
+  const mediaSize = 991;
+  // * Hàm kích hoạt
+  btnOpenMenu.addEventListener("click", menuMobile);
+  btnCloseMenu.addEventListener("click", menuMobile);
+  menuModal.addEventListener("click", menuMobile);
+  // * Hàm xử lý
   navMenu.addEventListener("click", function (event) {
     let menuHasChild = event.target.parentElement;
     if (menuHasChild.hasAttribute("data-toggle")) {
@@ -23,9 +35,6 @@ console.log("Đã kết nối với menu.js");
       return false;
     }
   });
-
-  const subMenus = navMenu.querySelectorAll(".sub-menu");
-  const menuIcons = navMenu.querySelectorAll(".menu-icon");
   function collapseMenu() {
     [...subMenus].forEach((item) => {
       if (item.hasAttribute("style")) {
@@ -40,16 +49,9 @@ console.log("Đã kết nối với menu.js");
       }
     });
   }
-
-  const btnOpenMenu = document.querySelector(".header-right-menu");
-  const modal = document.querySelector(".modal");
-  const btnCloseMenu = document.querySelector(".menu-close");
-  btnOpenMenu.addEventListener("click", menuMobile);
-  btnCloseMenu.addEventListener("click", menuMobile);
-  modal.addEventListener("click", menuMobile);
   function menuMobile() {
     navMenu.classList.toggle("menu-show");
-    modal.classList.toggle("modal-show");
+    menuModal.classList.toggle("menu-modal-show");
     if (document.documentElement.style.overflow === "hidden") {
       document.documentElement.style.removeProperty("overflow");
       document.documentElement.removeAttribute("style");
@@ -57,15 +59,13 @@ console.log("Đã kết nối với menu.js");
       document.documentElement.style.setProperty("overflow", "hidden");
     }
   }
-
-  const mediaSize = 991;
   window.addEventListener("resize", function () {
     if (this.innerWidth <= mediaSize) {
       resizeMenu();
     }
   });
   function resizeMenu() {
-    modal.classList.remove("modal-show");
+    menuModal.classList.remove("menu-modal-show");
     navMenu.classList.remove("menu-show");
   }
 })();
