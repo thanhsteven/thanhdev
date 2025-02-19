@@ -127,7 +127,7 @@
 }
 .menu-arrow {
   color: #fff;
-  transition: opacity 0.5s cubic-bezier(0.2, 1, 0.2, 1), visibility 0.5s cubic-bezier(0.2, 1, 0.2, 1), transform 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+  transition: all linear 0.3s;
 }
 @media screen and (max-width: 992px) {
   .menu-arrow {
@@ -216,7 +216,7 @@
   visibility: hidden;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.5s cubic-bezier(0.2, 1, 0.2, 1), visibility 0.5s cubic-bezier(0.2, 1, 0.2, 1), transform 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+  transition: all linear 0.3s;
 }
 @media screen and (max-width: 992px) {
   .sub-menu {
@@ -229,23 +229,18 @@
     max-width: unset;
     border-radius: unset;
     box-shadow: unset;
-    border-top: 1px solid #ddd;
     max-height: 0px;
   }
 }
 .sub-menu-item {
   background-color: #fff;
   transition: all linear 0.2s;
-  border-top: 1px solid #ddd;
 }
 @media screen and (max-width: 992px) {
   .sub-menu-item {
+    border-top: 1px solid #ddd;
     padding-left: 20px;
-    border-bottom: 1px solid #ddd;
   }
-}
-.sub-menu-item:first-child, .sub-menu-item:last-child {
-  border-top: unset;
 }
 .sub-menu-item:hover {
   background-color: rgba(221, 221, 221, 0.9);

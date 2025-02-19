@@ -107,7 +107,7 @@ $heightMenuItem: 50px;
   }
   &-arrow {
     color: #fff;
-    transition: $transition;
+    transition: all linear 0.3s;
     @include maxWidth($large) {
       pointer-events: none;
       color: $primaryColor;
@@ -186,7 +186,7 @@ $heightMenuItem: 50px;
   visibility: hidden;
   opacity: 0;
   transform: translateY(30px);
-  transition: $transition;
+  transition: all linear 0.3s;
   // - Điều chỉnh Mobile
   @include maxWidth($large) {
     visibility: unset;
@@ -198,21 +198,16 @@ $heightMenuItem: 50px;
     max-width: unset;
     border-radius: unset;
     box-shadow: unset;
-    border-top: 1px solid $borderMenu;
     max-height: 0px;
   }
   &-item {
     background-color: #fff;
     transition: all linear 0.2s;
-    border-top: 1px solid $borderMenu;
     @include maxWidth($large) {
+      border-top: 1px solid $borderMenu;
       padding-left: 20px;
-      border-bottom: 1px solid $borderMenu;
     }
-    &:first-child,
-    &:last-child {
-      border-top: unset;
-    }
+
     &:hover {
       background-color: rgba(221, 221, 221, 0.9);
       span {
