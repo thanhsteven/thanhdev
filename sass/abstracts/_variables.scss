@@ -2,6 +2,10 @@
 $container: 1200px;
 $containerFluid: 100%;
 
+// * Import Google Font
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+$fontPrimary: "Inter", sans-serif;
+
 // * Responsive CSS
 $extra-large: 1200px;
 $large: 992px;

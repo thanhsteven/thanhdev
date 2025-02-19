@@ -59,11 +59,12 @@
 }
 
 // * Hiện 2 dòng Text
-@mixin webkitBox($row) {
+@mixin line-clamp($row) {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: $row;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 // * Hiện thanh scroll ngang trên mobile

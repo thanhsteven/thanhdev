@@ -1,39 +1,78 @@
 @use "../../sass/abstracts" as *;
-@keyframes notification {
+.bottomright {
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  transform: translateY(120px);
+  z-index: 900;
+  // - Animation
+  animation: bottomAnimation 3s linear 1s 1 forwards;
+}
+
+.bottomleft {
+  position: fixed;
+  bottom: 0px;
+  left: 20px;
+  transform: translateY(120px);
+  z-index: 900;
+  // - Animation
+  animation: bottomAnimation 3s linear 1s 1 forwards;
+}
+
+@keyframes bottomAnimation {
+  20%,
+  80% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(120px);
+  }
+}
+
+.topright {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  transform: translateY(-130px);
+  z-index: 900;
+  animation: topAnimation 3s linear 1s 1 forwards;
+}
+
+.topleft {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  transform: translateY(-130px);
+  z-index: 900;
+  animation: topAnimation 3s linear 1s 1 forwards;
+}
+
+@keyframes topAnimation {
   20%,
   80% {
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(-120px);
+    transform: translateY(-130px);
   }
 }
+
 .noti {
-  @include flexbox(row, stretch, space-between, 8px);
+  @include flexbox(row, stretch, flex-start, 6px);
   & {
     max-width: 300px;
+    height: 110px;
     background-color: #fff;
     border-radius: $border12;
     box-shadow: $shadow2;
     padding: 10px;
-    position: fixed;
-    top: 15px;
-    left: 20px;
-    transform: translateY(-120px);
-    z-index: 900;
-    // - Animation
-    animation-name: notification;
-    animation-delay: 1s;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
   }
   &-avatar {
-    flex: 0 0 20%;
+    flex: 0 0 35%;
+    max-width: 35%;
     img {
-      width: 100%;
-      height: 100%;
+      width: 90px;
+      height: auto;
       object-fit: cover;
       aspect-ratio: 1/1;
       border-radius: 100rem;
@@ -41,21 +80,28 @@
     }
   }
   &-content {
-    flex: 0 0 80%;
+    font-family: $fontPrimary;
     padding-right: 10px;
   }
   &-title {
+    font-family: inherit;
     font-weight: 700;
-    color: $textColor;
-    font-size: 1rem;
+    font-size: 16px;
+    color: $primaryColor;
   }
   &-paragraph {
+    display: block;
+    @include line-clamp(2);
+    font-family: inherit;
     font-size: 14px;
-    line-height: 24px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.2px;
     color: $textColor;
-    @include webkitBox(1);
+    margin-top: 4px;
   }
   &-time {
+    font-family: inherit;
     font-size: 12px;
     font-weight: 600;
     color: rgba($textColor, 80%);

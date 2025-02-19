@@ -1,4 +1,4 @@
-console.log("Đã kết nối với menu.js");
+// console.log("Đã kết nối với menu.js");
 (function () {
   // * Khai báo biến tổng
   const menuModal = document.querySelector(".menu-modal");
