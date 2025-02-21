@@ -3,7 +3,14 @@ extend ./view/layout/layout.pug
 block menu 
   include ./element/menu-1/menu-1.pug
 
+block main 
+  include ./element/accordions/accordion.pug
+  include ./element/gallery/gallery.pug
+  
+
 
 append plugin 
   script(src="../../element/menu-1/menu-1.js")
   script(src="../../element/notification/noti.js")
+  script(src="../../element/accordions/accordion.js") 
+  script(src="../../element/gallery/gallery.js") 

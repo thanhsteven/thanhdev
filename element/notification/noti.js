@@ -43,12 +43,16 @@ const arrNoti = [
   Truyền biến vào: True là bật, Flase là tắt
   Truyền vị trí của noti: topleft (mặc định), topright, bottomleft, bottomright
 */
-controlNotification(true, "bottomright");
+controlNotification(true, "bottomright", 10000);
 
 // * Xác định vị trí của Noti
 const positionNoti = ["topleft", "topright", "bottomleft", "bottomright"];
 // * Hàm điều khiển
-function controlNotification(onOff = false, strPos = "topleft") {
+function controlNotification(
+  onOff = false,
+  strPos = "topleft",
+  timeNoti = 4000
+) {
   if (onOff == false) {
     clearInterval(timer);
   } else {
@@ -73,7 +77,7 @@ function controlNotification(onOff = false, strPos = "topleft") {
         // Gán biến vừa chạy vào biến sắp chạy
         lastRandomNoti == randomNoti;
       }
-    }, 4000);
+    }, timeNoti);
   }
 }
 

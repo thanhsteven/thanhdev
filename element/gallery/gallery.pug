@@ -1,0 +1,71 @@
+- 
+  var gallery_images = [
+    {
+      href: "#",
+      image: "../element/gallery/images/001.jpg",
+      alt: "Chai thuỷ tinh đựng rượu chất lượng",
+      index: 1,
+    },
+    {
+      href: "#",
+      image: "../element/gallery/images/002.jpg",
+      alt: "Chai thuỷ tinh đựng rượu chất lượng",
+      index: 2,
+    },
+    {
+      href: "#",
+      image: "../element/gallery/images/003.jpg",
+      alt: "Chai thuỷ tinh đựng rượu chất lượng",
+      index: 3,
+    },
+    {
+      href: "#",
+      image: "../element/gallery/images/004.jpg",
+      alt: "Chai thuỷ tinh đựng rượu chất lượng",
+      index: 4,
+    },
+    {
+      href: "#",
+      image: "../element/gallery/images/005.jpg",
+      alt: "Chai thuỷ tinh đựng rượu chất lượng",
+      index: 5,
+    },
+    {
+      href: "#",
+      image: "../element/gallery/images/006.jpg",
+      alt: "Chai thuỷ tinh đựng rượu chất lượng",
+      index: 6,
+    },
+    {
+      href: "#",
+      image: "../element/gallery/images/007.jpg",
+      alt: "Chai thuỷ tinh đựng rượu chất lượng",
+      index: 7,
+    },
+    {
+      href: "#",
+      image: "../element/gallery/images/008.jpg",
+      alt: "Chai thuỷ tinh đựng rượu chất lượng",
+      index: 8,
+    },
+    {
+      href: "#",
+      image: "../element/gallery/images/009.jpg",
+      alt: "Chai thuỷ tinh đựng rượu chất lượng",
+      index: 9,
+    },
+    {
+      href: "#",
+      image: "../element/gallery/images/010.jpg",
+      alt: "Chai thuỷ tinh đựng rượu chất lượng",
+      index: 10,
+    }
+  ]
+
+.gallery 
+  .container
+    .gallery-wrapper 
+      each item in gallery_images
+        .gallery-item 
+          a(href=item.href, rel="noopener noreferrer nofollow", data-index=`${item.index}`)
+            img(src=item.image, alt=item.alt, srcset=`${item.image} 2x`)

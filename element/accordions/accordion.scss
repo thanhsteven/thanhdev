@@ -1,0 +1,57 @@
+@use "../../sass/abstracts" as *;
+.accordion {
+  margin-block: 40px;
+  &-wrapper {
+    @include maxWidth($large) {
+      max-width: 90%;
+      padding: 15px;
+    }
+    @include maxWidth($medium) {
+      max-width: 100%;
+    }
+  }
+  &-item {
+    border-bottom: 1px solid $borderColor;
+    cursor: pointer;
+    &:first-child {
+      border-top: 1px solid $borderColor;
+    }
+  }
+  &-title {
+    @include flexbox(row, center, flex-start, 15px);
+    & {
+      padding-block: 20px;
+      cursor: pointer;
+    }
+    & * {
+      pointer-events: none;
+    }
+    span {
+      color: $primaryColor;
+      font-size: 26px;
+      font-weight: 700;
+      font-size: 16px;
+      text-wrap: wrap;
+      line-height: 28px;
+      @include maxWidth($medium) {
+        line-height: 26px;
+      }
+    }
+    i.fa {
+      transition: transform linear 0.25s;
+    }
+  }
+  &-answer {
+    max-height: 0px;
+    overflow-y: hidden;
+    transition: all linear 0.3s;
+    &-inner {
+      padding-left: 20px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      line-height: 1.8rem;
+      color: inherit;
+      font-weight: inherit;
+    }
+  }
+}
