@@ -43,7 +43,7 @@ const arrNoti = [
   Truyền biến vào: True là bật, Flase là tắt
   Truyền vị trí của noti: topleft (mặc định), topright, bottomleft, bottomright
 */
-controlNotification(true, "bottomright", 10000);
+controlNotification(false, "bottomright", 10000);
 
 // * Xác định vị trí của Noti
 const positionNoti = ["topleft", "topright", "bottomleft", "bottomright"];
